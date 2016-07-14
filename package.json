@@ -1,6 +1,6 @@
 {
   "name": "systemic-express",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A systemic express component",
   "main": "index.js",
   "scripts": {
