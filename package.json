@@ -1,0 +1,36 @@
+{
+  "name": "systemic-express",
+  "version": "1.0.0",
+  "description": "A systemic express component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GuideSmiths",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0",
+    "boom": "^3.2.2",
+    "express": "^4.14.0",
+    "jsontoxml": "0.0.11",
+    "lodash.get": "^4.3.0",
+    "lodash.has": "^4.4.0",
+    "lodash.merge": "^4.4.0",
+    "lodash.once": "^4.0.0",
+    "parse-duration": "^0.1.1",
+    "server-destroy": "^1.0.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "Systemic",
+    "Express"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guidesmiths/systemic-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guidesmiths/systemic-express/issues"
+  },
+  "homepage": "https://github.com/guidesmiths/systemic-express#readme"
+}
