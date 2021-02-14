@@ -4,7 +4,9 @@
   "description": "A systemic express component",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "GuideSmiths",
   "license": "ISC",
@@ -19,7 +21,8 @@
     "lodash.merge": "^4.6.0",
     "lodash.once": "^4.1.1",
     "parse-duration": "^0.1.1",
-    "server-destroy": "^1.0.1"
+    "server-destroy": "^1.0.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {},
   "keywords": [
@@ -33,5 +36,6 @@
   "bugs": {
     "url": "https://github.com/guidesmiths/systemic-express/issues"
   },
-  "homepage": "https://github.com/guidesmiths/systemic-express#readme"
+  "homepage": "https://github.com/guidesmiths/systemic-express#readme",
+  "snyk": true
 }
