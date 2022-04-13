@@ -41,6 +41,7 @@
   "homepage": "https://github.com/guidesmiths/systemic-express#readme",
   "snyk": true,
   "devDependencies": {
-    "eslint": "7.32.0"
+    "eslint": "7.32.0",
+    "systemic": "^3.3.10"
   }
 }
