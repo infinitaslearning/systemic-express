@@ -11,7 +11,7 @@
     "eslint:fix": "eslint . --ext .js --fix",
     "lint": "npm run eslint"
   },
-  "author": "GuideSmiths",
+  "author": "Infinitas",
   "license": "ISC",
   "dependencies": {
     "async": "^3.2.3",
@@ -30,12 +30,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guidesmiths/systemic-express.git"
+    "url": "git+https://github.com/infinitaslearning/systemic-express.git"
   },
   "bugs": {
-    "url": "https://github.com/guidesmiths/systemic-express/issues"
+    "url": "https://github.com/infinitaslearning/systemic-express/issues"
   },
-  "homepage": "https://github.com/guidesmiths/systemic-express#readme",
+  "homepage": "https://github.com/infinitaslearning/systemic-express#readme",
   "snyk": true,
   "devDependencies": {
     "eslint": "7.32.0",
