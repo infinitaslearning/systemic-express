@@ -1,5 +1,7 @@
 # systemic-express
-A [systemic](https://github.com/guidesmiths/systemic) express component
+A [systemic](https://github.com/guidesmiths/systemic) express component. 
+
+Comes with types and updated dependecies compared to the original [guidesmiths/systemic-express](github.com/guidesmiths/systemic-express)
 
 ## Usage
 ```js
