@@ -14,7 +14,7 @@
   "author": "GuideSmiths",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^3.2.3",
     "boom": "^3.2.2",
     "debug": "^3.1.0",
     "express": "^4.16.2",
