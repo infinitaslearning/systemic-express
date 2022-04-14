@@ -17,9 +17,9 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@infinitaslearning'
       - run: npm ci
-      - run: npm version `npm pkg get version | tr -d '"' | cut -d '.' -f 1-2`.${{ github.run_number }}
       - run: git config --global user.email "github@infinitaslearning.com"
       - run: git config --global user.name "Infinitas Learning"
+      - run: npm version `npm pkg get version | tr -d '"' | cut -d '.' -f 1-2`.${{ github.run_number }}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PAT_GITHUB_PACKAGES }}
