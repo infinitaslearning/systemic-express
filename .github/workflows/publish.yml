@@ -1,0 +1,22 @@
+name: Publish package to GitHub Packages
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@infinitaslearning'
+      - run: npm ci
+      - run: npm version `npm pkg get version | tr -d '"' | cut -d '.' -f 1-2`.${{ github.run_number }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PAT_GITHUB_PACKAGES }}
