@@ -22,4 +22,4 @@ jobs:
       - run: npm version `npm pkg get version | tr -d '"' | cut -d '.' -f 1-2`.${{ github.run_number }}
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.PAT_GITHUB_PACKAGES }}
+          NODE_AUTH_TOKEN: ${{ secrets.IL_INFINITAS_NPM_TOKEN }}
