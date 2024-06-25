@@ -40,6 +40,6 @@
   "snyk": true,
   "devDependencies": {
     "eslint": "7.32.0",
-    "systemic": "^3.3.10"
+    "systemic": "^4.1.2"
   }
 }

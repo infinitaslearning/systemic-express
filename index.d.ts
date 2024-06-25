@@ -1,4 +1,4 @@
-import { Component } from 'systemic'
+import { CallbackComponent } from 'systemic'
 import { ErrorRequestHandler, Express, RequestHandler } from 'express'
 
 export type AppConfig = {
@@ -24,12 +24,12 @@ export type MiddleWareConfig = {
  * Systemic component that creates and configures an Express app
  * @param options optionally a function that creates a basic Express app can be passed into the component
  */
-export function app(options?: { express?: () => Express }): Component<Express, { config?: AppConfig; logger?: any }>
+export function app(options?: { express?: () => Express }): CallbackComponent<Express, { config?: AppConfig; logger?: any }>
 
 /**
  * Starts the Express server
  */
-export function server(): Component<void, { config: ServerConfig; app: Express; logger?: any }>
+export function server(): CallbackComponent<void, { config: ServerConfig; app: Express; logger?: any }>
 
 /**
  * Adds default notFound and error middleware to the app
@@ -37,4 +37,4 @@ export function server(): Component<void, { config: ServerConfig; app: Express; 
  */
 export function defaultMiddleware(
   options?: MiddlewareOptions,
-): Component<void, { config?: MiddleWareConfig; app: Express; logger?: any }>
+): CallbackComponent<void, { config?: MiddleWareConfig; app: Express; logger?: any }>
