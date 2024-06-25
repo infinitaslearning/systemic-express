@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect",
     "eslint": "eslint . --ext .js --config .eslintrc.json --ignore-path .eslintignore --cache",
     "eslint:fix": "eslint . --ext .js --fix",
     "lint": "npm run eslint"
@@ -22,8 +20,7 @@
     "jsontoxml": "^0.1.0",
     "lodash": "^4.17.21",
     "parse-duration": "^0.1.1",
-    "server-destroy": "^1.0.1",
-    "snyk": "^1.316.1"
+    "server-destroy": "^1.0.1"
   },
   "keywords": [
     "Systemic",
