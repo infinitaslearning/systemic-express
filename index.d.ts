@@ -1,5 +1,5 @@
-import type { CallbackComponent } from "systemic";
 import type { ErrorRequestHandler, Express, RequestHandler } from "express";
+import type { CallbackComponent } from "systemic";
 
 export type AppConfig = {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
@@ -46,5 +46,5 @@ export function server(): CallbackComponent<
  */
 export function defaultMiddleware(
   options?: MiddlewareOptions,
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 ): CallbackComponent<void, { config?: MiddleWareConfig; app: Express; logger?: any }>;

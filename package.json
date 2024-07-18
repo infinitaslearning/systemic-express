@@ -39,7 +39,6 @@
   "snyk": true,
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
-    "@infinitaslearning/module-biome-config": "^1.0.0",
     "mocha": "^10.6.0",
     "sinon": "^18.0.0",
     "supertest": "^7.0.0",
