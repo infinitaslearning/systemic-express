@@ -39,7 +39,7 @@ describe("app", () => {
 				.then(() => done())
 				.catch((err) => {
 					throw err;
-				})
+				});
 		});
 	});
 });

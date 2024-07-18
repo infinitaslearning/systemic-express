@@ -1,7 +1,6 @@
-const { describe, it } = require("mocha");
+const { describe, it, skip } = require("mocha");
 const { strictEqual, deepStrictEqual } = require("node:assert/strict");
 const newBoom = require("@hapi/boom");
-
 
 /**
  * This test is here to prove that the old Boom.wrap method
@@ -11,14 +10,14 @@ const newBoom = require("@hapi/boom");
  */
 describe("Booom testing", () => {
 	const message = "Something went wrong";
-	it("wrap", () => {
-        let oldBoom
-        try {
-            oldBoom = require("boom");
-        } catch (e) {
-            console.log("Boom is not installed")
-            process.exit(0)
-        }
+	it("wrap", (done) => {
+		let oldBoom;
+		try {
+			oldBoom = require("boom");
+		} catch (e) {
+			console.log("\tBoom is not installed and this test will be skipped");
+			done();
+		}
 		const errorWrap = oldBoom.wrap(new Error(message));
 		const errorNew = new newBoom.Boom(new Error(message));
 
