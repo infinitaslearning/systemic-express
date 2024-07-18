@@ -4,7 +4,7 @@ const { strictEqual, deepStrictEqual } = require("node:assert/strict");
 const { errorMiddleware } = require("../lib/errorMiddleware");
 
 describe("errorMiddleware", () => {
-	const error = new Error();
+	const error = new Error("Something went wrong");
 	const request = { accepts: spy() };
 	const response = { status: spy(), send: spy() };
 	const logger = { log: spy() };
@@ -22,11 +22,17 @@ describe("errorMiddleware", () => {
 		strictEqual(lastResponseStatusArg, 500);
 
 		const lastResponseSendArg = response.send.lastCall.args.at(0);
-		strictEqual(lastResponseSendArg, "500 An internal server error occurred\n\n");
-	
-        const lastRequestAcceptsArg = request.accepts.args
+		strictEqual(
+			lastResponseSendArg,
+			"500 An internal server error occurred\n\n",
+		);
 
-        strictEqual(lastRequestAcceptsArg[0][0], 'json')
-        deepStrictEqual(lastRequestAcceptsArg[1][0], ['application/xml', 'text/xml'])
-    });
+		const lastRequestAcceptsArg = request.accepts.args;
+
+		strictEqual(lastRequestAcceptsArg[0][0], "json");
+		deepStrictEqual(lastRequestAcceptsArg[1][0], [
+			"application/xml",
+			"text/xml",
+		]);
+	});
 });
