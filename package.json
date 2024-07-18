@@ -4,7 +4,12 @@
   "description": "A systemic express component",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*"
+    "test": "mocha test/*",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "lint:apply": "biome lint --write .",
+    "check": "biome check .",
+    "check:apply": "biome check --write ."
   },
   "author": "Infinitas",
   "license": "ISC",
@@ -33,6 +38,8 @@
   "homepage": "https://github.com/infinitaslearning/systemic-express#readme",
   "snyk": true,
   "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@infinitaslearning/module-biome-config": "^1.0.0",
     "mocha": "^10.6.0",
     "sinon": "^18.0.0",
     "supertest": "^7.0.0",
