@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*",
-    "eslint": "eslint . --ext .js --config .eslintrc.json --ignore-path .eslintignore --cache",
-    "eslint:fix": "eslint . --ext .js --fix",
-    "lint": "npm run eslint"
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "lint:apply": "biome lint --write .",
+    "check": "biome check .",
+    "check:apply": "biome check --write ."
   },
   "author": "Infinitas",
   "license": "ISC",
@@ -36,7 +38,7 @@
   "homepage": "https://github.com/infinitaslearning/systemic-express#readme",
   "snyk": true,
   "devDependencies": {
-    "eslint": "7.32.0",
+    "@biomejs/biome": "^1.8.3",
     "mocha": "^10.6.0",
     "sinon": "^18.0.0",
     "supertest": "^7.0.0",

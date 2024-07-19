@@ -1,4 +1,4 @@
-const { describe, it, skip } = require("mocha");
+const { describe, it } = require("mocha");
 const { strictEqual, deepStrictEqual } = require("node:assert/strict");
 const newBoom = require("@hapi/boom");
 
@@ -9,20 +9,20 @@ const newBoom = require("@hapi/boom");
  * It should not be installed since it is deprecated https://www.npmjs.com/package/boom
  */
 describe("Booom testing", () => {
-	const message = "Something went wrong";
-	it("wrap", (done) => {
-		let oldBoom;
-		try {
-			oldBoom = require("boom");
-		} catch (e) {
-			console.log("\tBoom is not installed and this test will be skipped");
-			done();
-		}
-		const errorWrap = oldBoom.wrap(new Error(message));
-		const errorNew = new newBoom.Boom(new Error(message));
+  const message = "Something went wrong";
+  it("wrap", (done) => {
+    let oldBoom;
+    try {
+      oldBoom = require("boom");
+    } catch (_) {
+      console.log("\tBoom is not installed and this test will be skipped");
+      done();
+    }
+    const errorWrap = oldBoom.wrap(new Error(message));
+    const errorNew = new newBoom.Boom(new Error(message));
 
-		strictEqual(errorNew.message, errorWrap.message);
-		strictEqual(errorNew.isBoom, errorWrap.isBoom);
-		deepStrictEqual(errorNew.output, errorWrap.output);
-	});
+    strictEqual(errorNew.message, errorWrap.message);
+    strictEqual(errorNew.isBoom, errorWrap.isBoom);
+    deepStrictEqual(errorNew.output, errorWrap.output);
+  });
 });
