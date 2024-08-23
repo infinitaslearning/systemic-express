@@ -1,6 +1,5 @@
 const { describe, it } = require("mocha");
 const request = require("supertest");
-const express = require("express");
 
 const System = require("systemic");
 
