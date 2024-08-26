@@ -20,11 +20,16 @@ export type MiddleWareConfig = {
   showErrorDetail?: boolean
 }
 
+export type AppOptions = {
+  express?: () => Express;
+  jsonParserLimit?: string | number
+}
+
 /**
  * Systemic component that creates and configures an Express app
  * @param options optionally a function that creates a basic Express app can be passed into the component
  */
-export function app(options?: { express?: () => Express }): CallbackComponent<Express, { config?: AppConfig; logger?: any }>
+export function app(options?: AppOptions): CallbackComponent<Express, { config?: AppConfig; logger?: any }>
 
 /**
  * Starts the Express server
