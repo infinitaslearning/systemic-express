@@ -7,14 +7,14 @@ describe("errorMiddleware", () => {
 	const error = new Error("Something went wrong");
 	const request = { accepts: spy() };
 	const response = { status: spy(), send: spy() };
-	const logger = { log: spy() };
+	const logger = { error: spy() };
 
 	it("Should handle errors", async () => {
 		// Act
 		errorMiddleware({ logger, config: {} })(error, request, response, () => {});
 
 		// Assert
-		const loggedError = logger.log.lastCall.args.at(0);
+		const loggedError = logger.error.lastCall.args.at(0);
 		strictEqual(loggedError.message, error.message);
 		strictEqual(loggedError.name, error.name);
 
