@@ -1,0 +1,49 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "ignore": [
+      "**/package.json",
+      "**/package-lock.json",
+      "**/pnpm-lock.yaml",
+      "**/yarn.lock",
+      "node_modules/**/*",
+      "dist/**/*",
+      "coverage/**/*",
+      ".next"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 100
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noGlobalIsNan": "off"
+      },
+      "style": {
+        "useFragmentSyntax": "error"
+      },
+      "correctness": {
+        "useHookAtTopLevel": "error",
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error"
+      },
+      "nursery": {
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "paths": {
+              "@infinitaslearning/pixel-icons/mui": "Importing from pixel-icons/mui is not allowed, you need to import from the icon file directly, e.g. @pixel-icons/mui/ArrowDownIcon",
+              "@mui/material": "Importing directly from @mui/material is not encouraged, you should import from Pixel instead. If you need to import from mui, you need to add a biome ignore",
+              "@mui/system": "Importing directly from @mui/system is not encouraged, you should import from Pixel instead. If you need to import from mui, you need to add a biome ignore"
+            }
+          }
+        }
+      }
+    }
+  }
+}
